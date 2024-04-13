@@ -25,6 +25,7 @@ const config: Config = {
       primary: 'rgb(0 28 72 / 100%)',
       secondary: 'rgb(229 59 58/100%)',
       white: '#ffffff',
+      black:'#000000',
     }
 
 

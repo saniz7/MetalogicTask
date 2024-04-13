@@ -34,3 +34,21 @@
     text-wrap: balance;
   }
 }
+.navlink {
+  display: inline-block;
+}
+
+.navlink::after {
+  content: '';
+  width: 0px;
+  height: 10%;
+  display: block;
+  background: #e53b3a;
+  transition: width .3s ease;
+}
+.navlink.active::after{
+  width: 50%;
+}
+.navlink:hover::after {
+  width: 50%;
+}

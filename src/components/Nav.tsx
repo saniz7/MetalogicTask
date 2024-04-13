@@ -9,21 +9,36 @@ export function Nav({
     children: React.ReactNode;
 }>) {
     return (
-        <nav className='bg-primary text-white lg:flex justify-between px-8 py-3 items-center w-full '>
-            {children}
-        </nav>
+        <>
+            <nav className='fixed top-0  bg-primary text-white flex justify-between p-4 lg:px-8 lg:py-3 items-center w-full '>
+                {children}
+            </nav>
+        
+        </>
     );
 }
-
+export function NavHamburger({
+    children,
+}: Readonly<{
+    children: React.ReactNode;
+}>) {
+    return (
+        <>
+            <nav className='bg-primary text-white flex lg:hidden'>
+                {children}
+            </nav>
+        </>
+    );
+}
 export function Navlink(props: Omit<ComponentProps<typeof Link>, "classname">) {
+    const { href } = props;
     const pathname = usePathname();
+    const isActive = pathname === href;
+
     return (
         <Link
             {...props}
-            className={
-                " text-white hover:bg-secondary hover:text-white focus-visible:bg-secondary focus-visible:text-white " +
-                (pathname === props.href ? "bg-[#e53b3a] text-white" : "")
-            }
+            className={`navlink lg:text-white hover:text-white focus-visible:bg-secondary focus-visible:text-white ${isActive ? 'active text-secondary' : ''}`}
 
         />
     );
