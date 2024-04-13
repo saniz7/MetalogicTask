@@ -38,7 +38,7 @@ export function Navlink(props: Omit<ComponentProps<typeof Link>, "classname">) {
     return (
         <Link
             {...props}
-            className={`navlink lg:text-white hover:text-white focus-visible:bg-secondary focus-visible:text-white ${isActive ? 'active text-secondary' : ''}`}
+            className={`navlink hover:text-secondary lg:text-white lghover:text-white focus-visible:bg-secondary focus-visible:text-white ${isActive ? 'active text-secondary' : ''}`}
 
         />
     );
