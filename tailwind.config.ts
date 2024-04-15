@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        exo:['Exo','sans-serif'],
+        exo: ['Exo', 'sans-serif'],
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       backgroundImage: {
@@ -25,9 +25,18 @@ const config: Config = {
       primary: 'rgb(0 28 72 / 100%)',
       secondary: 'rgb(229 59 58/100%)',
       white: '#ffffff',
-      black:'#000000',
-      translucent:'hsla(0, 0%, 100%, .1)',
-      translucent_border:'hsla(0, 0%, 100%, .3)'
+      black: '#000000',
+      translucent: 'hsla(0, 0%, 100%, .1)',
+      translucent_border: 'hsla(0, 0%, 100%, .3)',
+      muted: 'hsla(0 0% 96.1%)',
+      muted_foreground: 'hsla(0 0% 45.1%)',
+      card: 'hsla(0 0% 100%)',
+      card_foreground: 'hsla(0 0% 3.9%)',
+      green: {
+        100: '#dcfce7',
+        400: '#4ade80',
+      },
+      border:'#eff2f0'
     }
 
 
