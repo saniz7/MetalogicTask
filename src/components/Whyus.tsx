@@ -6,7 +6,7 @@ export function Whyus({ children }: Readonly<{ children: React.ReactNode; }>) {
             className="text-white py-32 relative "
             style={{ backgroundImage: `url(${heroImage.src})` }}
         >
-            <div className="p-3 md:mx-20">
+            <div className="p-3 container">
                 <div className="rounded-xl border border-translucent_border bg-translucent p-4 text-white backdrop-blur md:p-8 lg:mx-auto lg:w-[80%]">
                     <div>
                         <div className="mb-8 text-2xl font-bold md:text-4xl">
