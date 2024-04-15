@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
+import { Whyus } from "@/components/Whyus";
 
 export default function Home() {
   return (
@@ -8,6 +7,9 @@ export default function Home() {
       <div className="bg-black text-white ">
         Hi
       </div>
+<Whyus>
+  Hiiiiiiiiiiiiii
+</Whyus>
     </>
   );
 }

@@ -26,6 +26,8 @@ const config: Config = {
       secondary: 'rgb(229 59 58/100%)',
       white: '#ffffff',
       black:'#000000',
+      translucent:'hsla(0, 0%, 100%, .1)',
+      translucent_border:'hsla(0, 0%, 100%, .3)'
     }
 
 
