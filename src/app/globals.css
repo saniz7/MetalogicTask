@@ -124,7 +124,7 @@ transform: rotateY(-180deg);
 }
 
 #tsparticles {
-  height: 600px;
+  height: 100vh;
 }
 .hover-gap {
   margin-right: 1px;

@@ -1,51 +1,43 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { DrawSVGPlugin } from 'gsap/all';
+import React, { useState, useEffect } from 'react';
 
 const MotionPathAnimation = () => {
-    const circleRef = useRef<SVGCircleElement>(null);
+    const [drawPercentage, setDrawPercentage] = useState(0);
 
     useEffect(() => {
-        gsap.registerPlugin(DrawSVGPlugin);
+        const handleScroll = () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const maxScroll = documentHeight - windowHeight;
+            const scrollPercentage = (window.scrollY / maxScroll) * 100;
 
-        const values: string[] = ["100%", "40% 60%", "20 350", "50% 50%", "true", "10%"];
-        let currentIndex = 0;
+            // Increase the draw percentage to make the animation faster
+            const drawPercentage = Math.min(Math.max(scrollPercentage * 3, 0), 100); // Adjust the multiplier for speed
+            setDrawPercentage(drawPercentage);
+        };
 
-        const next = () => {
-            gsap.killTweensOf(next);
-            if (++currentIndex === values.length) {
-                currentIndex = 0;
-            }
-            if (values[currentIndex] === "true") {
-                gsap.set("#current", { text: values[currentIndex] });
-            } else {
-                gsap.set("#current", { text: ('"' + values[currentIndex] + '"') });
-            }
-            gsap.to("#path", { drawSVG: values[currentIndex], duration: 1, ease: "power1.inOut" });
-        }
-
-        document.querySelector("#next")?.addEventListener("click", next);
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Call the handleScroll initially to set the drawPercentage
 
         return () => {
-            document.querySelector("#next")?.removeEventListener("click", next);
-        }
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
-        <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="516.3"
-            height="190"
-            viewBox="0 0 516.3 190"
-            style={{ enableBackground: 'new 0 0 516.3 190', transform: 'rotate(90deg)' } as any}
-            xmlSpace="preserve"
-        >
-            <path id="template" fill='none' d="M9.13,99.99c0,0,18.53-41.58,49.91-65.11c30-22.5,65.81-24.88,77.39-24.88c33.87,0,57.55,11.71,77.05,28.47c23.09,19.85,40.33,46.79,61.71,69.77c24.09,25.89,53.44,46.75,102.37,46.75c22.23,0,40.62-2.83,55.84-7.43c27.97-8.45,44.21-22.88,54.78-36.7c14.35-18.75,16.43-36.37,16.43-36.37" />
-            <path id="path" fill='none' stroke='red' d="M9.13,99.99c0,0,18.53-41.58,49.91-65.11c30-22.5,65.81-24.88,77.39-24.88c33.87,0,57.55,11.71,77.05,28.47c23.09,19.85,40.33,46.79,61.71,69.77c24.09,25.89,53.44,46.75,102.37,46.75c22.23,0,40.62-2.83,55.84-7.43c27.97-8.45,44.21-22.88,54.78-36.7c14.35-18.75,16.43-36.37,16.43-36.37" />
-        </svg>
+        <div className="min-h-screen py-8 md:py-32">
+            <div className="px-2 py-4 text-center text-4xl font-semibold capitalize  md:px-0 md:text-5xl">
+                design, build and scale your
+                <br />
+                vision with us
+            </div>
+            <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" className='block'>
+                <defs>
+                    <path id="motionPath" d="M 247.447 0.239 C 247.447 0.239 184.947 29.651 247.447 59.062 C 309.947 88.473 246.221 118.499 246.221 118.499 C 246.221 118.499 194.138 150.974 246.221 180.386 C 298.304 209.798 244.996 239.822 244.996 239.822 C 244.996 239.822 199.653 265.762 244.383 298.85" />
+                </defs>
+                <path style={{ fill: 'rgba(253, 253, 253, 0)', strokeWidth: '5px', stroke: 'rgb(239, 61, 61)', strokeDasharray: `${drawPercentage}% 100%`, strokeDashoffset: '0%' }} d="M 247.447 0.239 C 247.447 0.239 184.947 29.651 247.447 59.062 C 309.947 88.473 246.221 118.499 246.221 118.499 C 246.221 118.499 194.138 150.974 246.221 180.386 C 298.304 209.798 244.996 239.822 244.996 239.822 C 244.996 239.822 199.653 265.762 244.383 298.85"></path>
+            </svg>
+        </div>
     );
 };
 

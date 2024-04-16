@@ -5,6 +5,8 @@ import Particle from "@/components/Banner/Particles";
 import Countup from "@/components/Countup";
 import Product from "@/components/OurProduct/Product";
 import Services from "@/components/OurServices/Services";
+import CurveAnimation from "@/components/Vision";
+import MotionPathAnimation from "@/components/Vision";
 import { Whyus } from "@/components/Whyus";
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
       <Banner >
         <Particle />
       </Banner>
+      <MotionPathAnimation/>
       <Whyus />
       <Product />
       <Services />
