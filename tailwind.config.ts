@@ -28,11 +28,16 @@ const config: Config = {
         100: 'rgb(229 59 58/100%)',
         300: 'rgb(255 66 65/100%)',
         500: 'rgb(239 68 68/100%) ',
+        600: 'rgb(233 43 88/100%) ',
         800: 'rgb(255 93 93/100%)'
+      },
+      blue: {
+        200: 'rgb(191 219 254/100%)'
       },
       white: '#ffffff',
       black: '#000000',
       translucent: 'hsla(0, 0%, 100%, .1)',
+      translucent_dark: 'rgba(0, 0, 0, .3)',
       translucent_border: 'hsla(0, 0%, 100%, .3)',
       muted: 'hsla(0 0% 96.1%)',
       muted_foreground: 'hsla(0 0% 45.1%)',
