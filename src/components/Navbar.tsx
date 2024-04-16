@@ -42,7 +42,7 @@ export function Navlink(props: Omit<ComponentProps<typeof Link>, "classname">) {
   return (
     <Link
       {...props}
-      className={`navlink hover:text-secondary lg:text-white lghover:text-white focus-visible:bg-secondary focus-visible:text-white ${isActive ? 'active text-secondary' : ''}`}
+      className={`navlink hover:text-secondary-100 lg:text-white lghover:text-white focus-visible:bg-secondary-100 focus-visible:text-white ${isActive ? 'active text-secondary-100' : ''}`}
 
     />
   );
@@ -71,13 +71,13 @@ export function Navbar() {
           </button>
         </NavHamburger>
         <div className=" font-semibold gap-8 hidden lg:flex">
-          <Navlink href="/Landingpage">Home</Navlink>
+          <Navlink href="/">Home</Navlink>
           <Navlink href="/admin/product">Services</Navlink>
           <Navlink href="/admin/us">Career</Navlink>
           <Navlink href="/admin/aboutus">Blogs</Navlink>
           <Navlink href="/admin/aboutus">About Us</Navlink>
         </div>
-        <div className="hidden lg:inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 bg-secondary text-white"  >
+        <div className="hidden lg:inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 bg-secondary-100 text-white"  >
           <Link href='/contact'>Get in touch</Link>
         </div>
 

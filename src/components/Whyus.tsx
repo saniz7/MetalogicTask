@@ -11,7 +11,7 @@ export function Whyus({ children }: Readonly<{ children: React.ReactNode; }>) {
                     <div>
                         <div className="mb-8 text-2xl font-bold md:text-4xl">
                             Why Metalogic
-                            <span className='text-secondary'>  ?</span>
+                            <span className='text-secondary-500'>  ?</span>
                         </div>
                         <p className="w-[80%]">Innovation is our driving force. We explore the latest tech trends to deliver groundbreaking solutions that keep you ahead.</p>
                     </div>

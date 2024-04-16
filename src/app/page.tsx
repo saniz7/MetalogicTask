@@ -1,5 +1,6 @@
 
 import Product from "@/components/OurProduct/Product";
+import Services from "@/components/OurServices/Services";
 import { Whyus } from "@/components/Whyus";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         Hiiiiiiiiiiiiii
       </Whyus>
       <Product />
+      <Services/>
     </>
   );
 }

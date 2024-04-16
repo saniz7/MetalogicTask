@@ -20,6 +20,7 @@ const Footer = () => {
                     <div>
                         <div className="tracking-widest font-exo font-bold text-3xl">MetaLogic</div>
                         <div className='text-sm mb-4'>Software Private Limited</div>
+                        
                         <ul className='flex flex-col gap-2 text-sm'>
                             <li className='flex gap-2'><MapPin className='w-4 h-4' />Saptakhel, Lalitpur (Head office)</li>
                             <li className='flex gap-2'><Phone className='w-4 h-4' />+ 977 9851353599</li>

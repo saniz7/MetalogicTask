@@ -71,8 +71,12 @@
     max-width: 1200px;
   }
 }
-
 @media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+@media (min-width: 1536px) {
   .container {
     max-width: 1400px;
   }
@@ -95,4 +99,20 @@
 }
 .navlink:hover::after {
   width: 50%;
+}
+.card{
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+.card:hover{
+  transform: rotateY(180deg);
+}
+.thefront{
+  backface-visibility: hidden;
+}
+
+.theback{
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 }

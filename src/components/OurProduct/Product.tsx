@@ -77,7 +77,7 @@ const Product = () => {
 
                                 </ul>
                                 <div className="flex self-center px-8 pb-3 pt-10 lg:self-end">
-                                    <button className='h-9 px-4 py-2 inline-flex  items-center justify-center rounded-md text-sm font-medium shadow-sm text-secondary border-secondary border transition-all duration-500 hover:bg-secondary hover:text-white'>
+                                    <button className='h-9 px-4 py-2 inline-flex  items-center justify-center rounded-md text-sm font-medium shadow-sm text-secondary-100 border-secondary-100 border transition-all duration-500 hover:bg-secondary-300 hover:text-white'>
                                         <div className='flex items-center'>
                                             <span>Learn more</span>
                                             <span><ArrowRight className='h-4 w44' /></span>

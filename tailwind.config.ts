@@ -23,7 +23,13 @@ const config: Config = {
     },
     colors: {
       primary: 'rgb(0 28 72 / 100%)',
-      secondary: 'rgb(229 59 58/100%)',
+      secondary:
+      {
+        100: 'rgb(229 59 58/100%)',
+        300: 'rgb(255 66 65/100%)',
+        500: 'rgb(239 68 68/100%) ',
+        800: 'rgb(255 93 93/100%)'
+      },
       white: '#ffffff',
       black: '#000000',
       translucent: 'hsla(0, 0%, 100%, .1)',
@@ -36,7 +42,7 @@ const config: Config = {
         100: '#dcfce7',
         400: '#4ade80',
       },
-      border:'#eff2f0'
+      border: '#eff2f0'
     }
 
 
