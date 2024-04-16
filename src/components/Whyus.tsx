@@ -1,6 +1,6 @@
 import heroImage from '../images/herobg.svg';
 
-export function Whyus({ children }: Readonly<{ children: React.ReactNode; }>) {
+export function Whyus() {
     return (
         <div
             className="text-white py-32 relative "
