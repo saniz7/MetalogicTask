@@ -17,7 +17,9 @@ const Particle = () => {
   return (
     <div
       style={{
-        height: "100%", overflow: "hidden", position: "absolute",
+        
+        // overflow: "hidden",
+        position: "absolute",
         top: "0",
         left: "0",
         width: "100%",
@@ -30,6 +32,7 @@ const Particle = () => {
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
+        height="full"
         options={{
           "autoPlay": true,
           "background": {
@@ -535,8 +538,6 @@ const Particle = () => {
           }
         }}
       />
-
-      )
     </div>
   );
 };

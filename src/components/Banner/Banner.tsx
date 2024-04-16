@@ -1,4 +1,3 @@
-import Particle from './Particles';
 import heroImage from '../../images/herobg.svg';
 import { ArrowRight } from 'lucide-react';
 
@@ -9,7 +8,7 @@ export function Banner({
 }>) {
     return (
         <>
-            <div className='relative w-full  flex flex-col justify-center items-center text-white text-center py-32'
+            <div className='relative w-full h-screen flex flex-col justify-center items-center text-white text-center '
                 style={{ backgroundImage: `url(${heroImage.src})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
             >
                 <div>
