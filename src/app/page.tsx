@@ -1,4 +1,8 @@
 
+
+import { Banner } from "@/components/Banner/Banner";
+import Particle from "@/components/Banner/Particles";
+import Countup from "@/components/Countup";
 import Product from "@/components/OurProduct/Product";
 import Services from "@/components/OurServices/Services";
 import { Whyus } from "@/components/Whyus";
@@ -6,14 +10,13 @@ import { Whyus } from "@/components/Whyus";
 export default function Home() {
   return (
     <>
-      <div className="bg-black text-white ">
-        Hi
-      </div>
-      <Whyus>
-        Hiiiiiiiiiiiiii
-      </Whyus>
+      <Banner >
+        <Particle />
+      </Banner>
+      <Whyus />
       <Product />
-      <Services/>
+      <Services />
+      <Countup />
     </>
   );
 }

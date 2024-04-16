@@ -100,19 +100,36 @@
 .navlink:hover::after {
   width: 50%;
 }
+.maincard:hover .card{
+cursor: pointer;
+transform: rotateY(-180deg);
+
+}
 .card{
   perspective: 1000px;
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
-.card:hover{
+/* .card:hover{
   transform: rotateY(180deg);
-}
+  cursor: pointer;
+} */
 .thefront{
   backface-visibility: hidden;
 }
 
 .theback{
   backface-visibility: hidden;
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
+}
+
+#tsparticles {
+  height: 600px;
+}
+.hover-gap {
+  margin-right: 1px;
+      transition: margin-right 0.3s ease; /* Add transition */
+}
+.hover-gap:hover {
+margin-right: 5px; 
 }
