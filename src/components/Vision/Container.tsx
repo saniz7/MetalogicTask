@@ -88,20 +88,20 @@ const Container = () => {
     }, []);
     return (
         <div className=' flex-col relative hidden xl:flex '>
-            <div ref={ref2} className={`${state1 ? 'slide-in-left' : ''} flex w-[500px] justify-end absolute gap-8 top-44 left-40 border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 group/edit hover:cursor-pointer hover:bg-secondary-300 hover:text-white`}>
+            <div ref={ref2} className={`${state1 ? 'slide-in-left' : ''} flex w-[500px] justify-end absolute gap-8 top-44 left-40 border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 bg-white  hover:cursor-pointer`}>
                 <p className='text-right'>
                     Our Skilled designers will craft visually stunning and  intuitive  user interfaces that enhance the user experience.
                 </p>
                 <span className='flex text-3xl font-semibold'>Design</span>
-                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white group-hover/edit:text-secondary-100 '>2</span>
+                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full  '>2</span>
 
             </div>
-            <div ref={ref4} className={`${state4 ? 'slide-in-left' : ''} flex w-[500px] justify-end absolute gap-8 top-[494px] left-40 border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 group/edit hover:cursor-pointer hover:bg-secondary-300 hover:text-white`}>
+            <div ref={ref4} className={`${state4 ? 'slide-in-left' : ''} flex w-[500px] justify-end absolute gap-8 top-[494px] left-40 border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 bg-white hover:cursor-pointer`}>
                 <p className='text-right'>
                     {"We'll meticulously prepare for a successdul launch,ensuring  a smooth transition from development to deployment"}
                 </p>
                 <span className='flex text-3xl font-semibold'>Launch</span>
-                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white group-hover/edit:text-secondary-100'>4</span>
+                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white'>4</span>
 
             </div>
             <div className=''>
@@ -126,22 +126,22 @@ const Container = () => {
                     ></path>
                 </svg>
             </div>
-            <div ref={ref1} className={`${state1 ? 'slide-in-right' : ''} flex w-[500px] justify-end absolute gap-8 right-44 top-4 border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 group/edit hover:cursor-pointer hover:bg-secondary-300 hover:text-white `}>
-                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white group-hover/edit:text-secondary-100'>1</span>
+            <div ref={ref1} className={`${state1 ? 'slide-in-right' : ''} flex w-[500px] justify-end absolute gap-8 right-44 top-4 border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 bg-white hover:cursor-pointer `}>
+                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white '>1</span>
                 <span className='flex text-3xl font-semibold'>Ideate</span>
                 <p className='text-right'>
                     {"Let's brainstorm together and explore creative ideas to solve your unique challenges."}                    </p>
 
             </div>
-            <div ref={ref3} className={`${state3 ? 'slide-in-right' : ''} flex w-[500px] justify-end absolute gap-8 right-44 top-[330px] border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 group/edit hover:cursor-pointer hover:bg-secondary-300 hover:text-white`}>
-                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white group-hover/edit:text-secondary-100'>3</span>
+            <div ref={ref3} className={`${state3 ? 'slide-in-right' : ''} flex w-[500px] justify-end absolute gap-8 right-44 top-[330px] border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 bg-white hover:cursor-pointer `}>
+                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white'>3</span>
                 <span className='flex text-3xl font-semibold'>Develop</span>
                 <p className='text-right'>
                     {"Our expert developers will turn your approved design into a robust and scalable software solution."}                    </p>
 
             </div>
-            <div ref={ref5} className={`${state5 ? 'slide-in-right' : ''} flex w-[500px] justify-end absolute gap-8 right-44 top-[650px] border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 group/edit hover:cursor-pointer hover:bg-secondary-300 hover:text-white`}>
-                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full group-hover/edit:bg-white group-hover/edit:text-secondary-100'>5</span>
+            <div ref={ref5} className={`${state5 ? 'slide-in-right' : ''} flex w-[500px] justify-end absolute gap-8 right-44 top-[650px] border border-secondary-300 rounded-xl items-center p-2 transition-all duration-500 group/edit hover:cursor-pointer bg-white`}>
+                <span className='flex justify-center items-center bg-secondary-600 h-10 w-10 text-white p-4 rounded-full  '>5</span>
                 <span className='flex text-3xl font-semibold'>Scale</span>
                 <p className='text-right'>
                     {"As your business grows, we'll work with you to scale your software and accomodate increasing demands."}                    </p>
