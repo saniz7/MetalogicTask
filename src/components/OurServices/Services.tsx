@@ -15,7 +15,7 @@ const Services = () => {
     }, [inView]);
     return (
         // <div className='container'>
-        <div ref={ref} className="grid w-[80%] gap-y-8 pt-20 container sm:mx-auto lg:w-[90%] lg:grid-cols-2">
+        <div ref={ref} className="grid md:w-[80%] gap-y-8 pt-20 2xl:container sm:mx-auto lg:w-[90%] lg:grid-cols-2">
             <div className="hover:flip-vertical-fwd  order-2 grid items-center justify-center gap-y-8 px-4 sm:grid-cols-2">
                 <div className='flex flex-col gap-8'>
                     <Servicecard img={<MonitorSmartphone className='h-14 w-14' />} header="UI/UX" text="we create interfaces that are not just visually appealing, but also intuitive and conversion-focused." backtext="Discover how we design interfaces that blend visual appeal with intuitiveness, driving conversions and enhancing user experience seamlessly." color={false} />
