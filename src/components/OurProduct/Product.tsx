@@ -18,35 +18,43 @@ import { useInView } from 'react-intersection-observer';
 
 const Product = () => {
     const { ref, inView } = useInView();
-    const [stateview, setStateview] = useState(false);
-
+    const [stateview1, setStateview1] = useState(false);
+    const [stateview2, setStateview2] = useState(true);
+    const { ref: ref1, inView: inView1 } = useInView();
+    const { ref: ref2, inView: inView2 } = useInView();
     // Trigger count when entering viewport
     useEffect(() => {
-        if (inView) {
-            setStateview(true);
+        if (inView1) {
+            setStateview1(true);
             console.log('view');
         }
-    }, [inView]);
+    }, [inView1]);
+    useEffect(() => {
+        if (inView2) {
+            setStateview2(true);
+            console.log('view');
+        }
+    }, [inView2]);
     const [state, setState] = useState(true);
     const banashwali = [{ src: img1 }, { src: img2 }, { src: img3 }];
     const digitalkhata = [{ src: img4 }, { src: img5 }, { src: img6 }];
     const banashwali_text = "Trace the footsteps of your ancestors and discover your family tree's story.";
     const digitalkhata_text = "Where Finances unify for business and personal success"
     return (
-        <div ref={ref} style={{
+        <div ref={ref1} style={{
             backgroundImage: `url(${bg.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: '0 100%'
         }}>
-            <div className='container py-20'
+            <div  ref={ref2} className='container py-20'
 
             >
                 <div className="flex flex-col items-center justify-center">
                     <div className='lg:mx-auto lg:w-[80%]'>
-                        <div  className={`z-50 pb-12 text-4xl font-bold md:w-[50%] md:pb-24 md:text-5xl ${stateview ? 'text-focus-in':''}`}>Explore Our Products</div>
+                        <div  className={`z-50 pb-12 text-4xl font-bold md:w-[50%] md:pb-24 md:text-5xl ${stateview1 ? 'text-focus-in':''}`}>Explore Our Products</div>
                         <div className="h-9 items-center justify-center bg-muted p-1 text-muted_foreground rounded-3xl grid grid-cols-2 md:w-[50%] lg:w-[30%]">
                             <button className={`inline-flex items-center justify-center px-3 py-1 text-sm font-medium rounded-3xl ${state ? 'bg-white text-black border border-black' : ''}`} onClick={() => setState(true)}>Banshwali</button>
                             <button className={`inline-flex items-center justify-center px-3 py-1 text-sm font-medium rounded-3xl ${!state ? 'bg-white text-black border border-black' : ''}`} onClick={() => setState(false)}>Digital khata</button>
                         </div>
-                        <div className="rounded-xl border border-border bg-card text-card-foreground shadow-md my-4 grid grid-cols-1 md:grid-cols-2">
+                        <div className={`${stateview2 ? 'slide-in-rightproduct':''} rounded-xl border border-border bg-card text-card-foreground shadow-md my-4 grid grid-cols-1 md:grid-cols-2`}>
                             <div className="w-[100%] relative flex items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-green-100 pb-10 lg:rounded-r-none">
                                 <Productswiper image={state ? banashwali : digitalkhata} text={state ? banashwali_text : digitalkhata_text} />
                             </div>
