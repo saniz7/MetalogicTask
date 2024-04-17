@@ -28,7 +28,7 @@ export function Whyus() {
             const documentHeight = document.documentElement.scrollHeight;
             const maxScroll = documentHeight - windowHeight;
             const scrollPercentage = (window.scrollY / maxScroll) * 100;
-            const newDrawPercentage = Math.min(Math.max(scrollPercentage * 3, 0), 100);
+            const newDrawPercentage = Math.min(Math.max(scrollPercentage * 1.8, 0), 100);
             setDrawPercentage(newDrawPercentage);
         }
     };
@@ -72,11 +72,11 @@ export function Whyus() {
                                 <path
                                     ref={svgRef}
                                     id="dots"
-                                    d="M30 32L30 292"
+                                    d="M30 32L30 296"
                                     stroke="#999999"
                                     strokeWidth="2"
                                     strokeLinecap="round"
-                                    strokeDasharray={`7 7, ${drawPercentage * 3}`}
+                                    strokeDasharray={`1 10, ${drawPercentage * 3}`}
                                     className="dashed_path"
                                     style={{ transition: "stroke-dasharray 0.5s ease" }}
                                 />
