@@ -102,25 +102,29 @@
 }
 .maincard:hover .card{
 cursor: pointer;
-transform: rotateY(-180deg);
+transform: rotateY(180deg);
 
 }
-.card{
+.maincard{
   perspective: 1000px;
+}
+.card{
   transform-style: preserve-3d;
-  transition: all 0.8s ease;
+  transition: transform 0.6s;
 }
 /* .card:hover{
   transform: rotateY(180deg);
   cursor: pointer;
 } */
-.thefront{
+.card-front{
   backface-visibility: hidden;
 }
 
-.theback{
+.card-back{
   backface-visibility: hidden;
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
+
+  /* transform: rotateY(180deg); */
 }
 
 #tsparticles {
@@ -197,6 +201,67 @@ margin-right: 5px;
   100% {
     -webkit-filter: blur(0px);
             filter: blur(0px);
+    opacity: 1;
+  }
+}
+.slide-in-right {
+	-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-left {
+	-webkit-animation: slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.slide-in-right {
+	-webkit-animation: slide-in-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 }

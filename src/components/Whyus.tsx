@@ -1,26 +1,63 @@
 "use client"
-import heroImage from '../images/herobg.svg';
+import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import React, { useState, useEffect } from 'react';
-
+import heroImage from '../images/herobg.svg';
 export function Whyus() {
     const [state, setState] = useState(false);
-    const { ref, inView } = useInView();
+    const { ref: inViewRef, inView } = useInView();
 
-    // Trigger count when entering viewport
     useEffect(() => {
         if (inView) {
-            setState(true);  
+            setState(true);
             console.log('view');
-                      
         }
     }, [inView]);
+
+    const [drawPercentage, setDrawPercentage] = useState(0);
+    const [isInViewport, setIsInViewport] = useState(false);
+    const svgRef = useRef(null);
+
+    const onEnterViewport = () => {
+        console.log("Entered SVG viewport");
+        setIsInViewport(true);
+    };
+
+    const handleScroll = () => {
+        if (isInViewport) {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const maxScroll = documentHeight - windowHeight;
+            const scrollPercentage = (window.scrollY / maxScroll) * 100;
+            const newDrawPercentage = Math.min(Math.max(scrollPercentage * 3, 0), 100);
+            setDrawPercentage(newDrawPercentage);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isInViewport]);
+
+    useEffect(() => {
+        const svgElement = svgRef.current;
+        if (svgElement) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        onEnterViewport();
+                        observer.disconnect();
+                    }
+                },
+                { threshold: 0.1 }
+            );
+            observer.observe(svgElement);
+            return () => observer.disconnect();
+        }
+    }, []);
+
     return (
-        <div
-            className="text-white py-32 relative "
-            style={{ backgroundImage: `url(${heroImage.src})` }}
-        >
-            <div ref={ref} className={`p-3 container ${state ? 'slide-in-bottom ' : ''}`}>
+        <div className="text-white py-32 relative" style={{ backgroundImage: `url(${heroImage.src})` }}>
+            <div ref={inViewRef} className={`p-3 container ${state ? 'slide-in- ' : ''}`}>
                 <div className="rounded-xl border border-translucent_border bg-translucent p-4 text-white backdrop-blur md:p-8 lg:mx-auto lg:w-[80%]">
                     <div>
                         <div className="mb-8 text-2xl font-bold md:text-4xl">
@@ -32,7 +69,17 @@ export function Whyus() {
                     <div className="flex gap-4 pt-4 md:px-[10%] md:pr-[10%]">
                         <div className='hidden md:flex'>
                             <svg width="65" height="384" viewBox="0 0 65 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path id="dots" d="M30 32L30 292" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-dasharray="" className="dashed_path"></path>
+                                <path
+                                    ref={svgRef}
+                                    id="dots"
+                                    d="M30 32L30 292"
+                                    stroke="#999999"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeDasharray={`7 7, ${drawPercentage * 3}`}
+                                    className="dashed_path"
+                                    style={{ transition: "stroke-dasharray 0.5s ease" }}
+                                />
                                 <rect x="29" y="23" width="2" height="70" rx="1" fill="url(#paint0_linear_1_10894)"></rect>
                                 <g filter="url(#filter0_di_1_10894)">
                                     <circle cx="30.5" cy="29.5" r="18.5" fill="url(#paint1_linear_1_10894)"></circle>
