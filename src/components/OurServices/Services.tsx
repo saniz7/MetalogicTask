@@ -1,10 +1,21 @@
-import React from 'react'
-import { ArrowRight, MonitorSmartphone, Globe, TabletSmartphone, HeartHandshake, BookCopy } from 'lucide-react';
+"use client"
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer'; import { ArrowRight, MonitorSmartphone, Globe, TabletSmartphone, HeartHandshake, BookCopy } from 'lucide-react';
 import Servicecard from './Servicecard';
 const Services = () => {
+    const { ref, inView } = useInView();
+    const [state, setState] = useState(false);
+
+    // Trigger count when entering viewport
+    useEffect(() => {
+        if (inView) {
+            setState(true);
+            console.log('view');
+        }
+    }, [inView]);
     return (
         // <div className='container'>
-        <div className="grid w-[80%] gap-y-8 pt-20 container sm:mx-auto lg:w-[90%] lg:grid-cols-2">
+        <div ref={ref} className="grid w-[80%] gap-y-8 pt-20 container sm:mx-auto lg:w-[90%] lg:grid-cols-2">
             <div className="hover:flip-vertical-fwd  order-2 grid items-center justify-center gap-y-8 px-4 sm:grid-cols-2">
                 <div className='flex flex-col gap-8'>
                     <Servicecard img={<MonitorSmartphone className='h-14 w-14' />} header="UI/UX" text="we create interfaces that are not just visually appealing, but also intuitive and conversion-focused." backtext="Discover how we design interfaces that blend visual appeal with intuitiveness, driving conversions and enhancing user experience seamlessly." color={false} />
@@ -17,9 +28,9 @@ const Services = () => {
                 </div>
             </div>
             <div className="flex flex-col gap-6 px-4 md:px-8 lg:order-2">
-                <div className='font-semibold '>Our Services</div>
-                <div className='text-5xl font-bold'>Empowering <br /> Your Vision</div>
-                <div>Our range of offerings is carefully curated to cater to your diverse needs, ensuring that your digital journey is seamless, captivating, and results-driven.</div>
+                <div className={`font-semibold ${state ? 'text-focus-in' : ""}`} >Our Services</div>
+                <div className={`text-5xl font-bold ${state ? 'text-focus-in' : ""}`}>Empowering <br /> Your Vision</div>
+                <div className={` ${state ? 'text-focus-in' : ""}`}>Our range of offerings is carefully curated to cater to your diverse needs, ensuring that your digital journey is seamless, captivating, and results-driven.</div>
                 <button className='h-9 px-4 py-2 flex  items-center justify-center rounded-md text-sm font-medium w-fit shadow-sm text-secondary-100 border-secondary-100 border transition-all duration-500 hover:bg-secondary-300 hover:text-white'>
                     <div className='flex items-center'>
                         <span>Learn more</span>

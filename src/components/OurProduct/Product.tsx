@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, FreeMode, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -14,14 +14,26 @@ import img6 from '../../images/digitalkhata/dashboard.svg';
 import { ArrowRight } from 'lucide-react';
 import bg from '../../images/products_bg.svg'
 import { Productswiper } from './ProductSwiper';
+import { useInView } from 'react-intersection-observer';
+
 const Product = () => {
+    const { ref, inView } = useInView();
+    const [stateview, setStateview] = useState(false);
+
+    // Trigger count when entering viewport
+    useEffect(() => {
+        if (inView) {
+            setStateview(true);
+            console.log('view');
+        }
+    }, [inView]);
     const [state, setState] = useState(true);
     const banashwali = [{ src: img1 }, { src: img2 }, { src: img3 }];
     const digitalkhata = [{ src: img4 }, { src: img5 }, { src: img6 }];
     const banashwali_text = "Trace the footsteps of your ancestors and discover your family tree's story.";
     const digitalkhata_text = "Where Finances unify for business and personal success"
     return (
-        <div style={{
+        <div ref={ref} style={{
             backgroundImage: `url(${bg.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: '0 100%'
         }}>
             <div className='container py-20'
@@ -29,7 +41,7 @@ const Product = () => {
             >
                 <div className="flex flex-col items-center justify-center">
                     <div className='lg:mx-auto lg:w-[80%]'>
-                        <div className="z-50 pb-12 text-4xl font-bold md:w-[50%] md:pb-24 md:text-5xl">Explore Our Products</div>
+                        <div  className={`z-50 pb-12 text-4xl font-bold md:w-[50%] md:pb-24 md:text-5xl ${stateview ? 'text-focus-in':''}`}>Explore Our Products</div>
                         <div className="h-9 items-center justify-center bg-muted p-1 text-muted_foreground rounded-3xl grid grid-cols-2 md:w-[50%] lg:w-[30%]">
                             <button className={`inline-flex items-center justify-center px-3 py-1 text-sm font-medium rounded-3xl ${state ? 'bg-white text-black border border-black' : ''}`} onClick={() => setState(true)}>Banshwali</button>
                             <button className={`inline-flex items-center justify-center px-3 py-1 text-sm font-medium rounded-3xl ${!state ? 'bg-white text-black border border-black' : ''}`} onClick={() => setState(false)}>Digital khata</button>

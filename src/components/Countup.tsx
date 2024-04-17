@@ -10,9 +10,7 @@ const Countup = () => {
     // Trigger count when entering viewport
     useEffect(() => {
         if (inView) {
-            setStartCount(0);
-            console.log('view');
-            
+            setStartCount(0);            
         }
     }, [inView]);
 

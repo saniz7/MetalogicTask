@@ -1,12 +1,26 @@
+"use client"
 import heroImage from '../images/herobg.svg';
+import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from 'react';
 
 export function Whyus() {
+    const [state, setState] = useState(false);
+    const { ref, inView } = useInView();
+
+    // Trigger count when entering viewport
+    useEffect(() => {
+        if (inView) {
+            setState(true);  
+            console.log('view');
+                      
+        }
+    }, [inView]);
     return (
         <div
             className="text-white py-32 relative "
             style={{ backgroundImage: `url(${heroImage.src})` }}
         >
-            <div className="p-3 container">
+            <div ref={ref} className={`p-3 container ${state ? 'slide-in-bottom ' : ''}`}>
                 <div className="rounded-xl border border-translucent_border bg-translucent p-4 text-white backdrop-blur md:p-8 lg:mx-auto lg:w-[80%]">
                     <div>
                         <div className="mb-8 text-2xl font-bold md:text-4xl">
