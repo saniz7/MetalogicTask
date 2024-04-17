@@ -7,20 +7,41 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react
 const Footer = () => {
     return (
         <footer className='  relative w-full bg-primary px-4 pb-8 pt-24 text-white md:px-16 '>
-            <div className='flex justify-between'>
-                <div className='flex lg:flex-row gap-4 lg:gap-2' >
-                    <div>
-                        <Image src={metalogo} alt="metalogic company logo" className="w-[50px]"></Image>
+            <div className='flex flex-col gap-6 xl:gap-0 xl:flex-row justify-between'>
+                <div className='flex flex-col gap-2 md:hidden'>
+                    <div className='flex gap-2'>
+                        <span>
+                            <Image src={metalogo} alt="metalogic company logo" className="w-[50px]"></Image>
+                        </span>
+                        <div className='flex flex-col'>
+                            <div className="tracking-widest font-exo font-bold text-3xl">MetaLogic</div>
+                            <div className='text-sm mb-4'>Software Private Limited</div>
+                        </div>
                     </div>
-                    <div>
-                        <div className="tracking-widest font-exo font-bold text-3xl">MetaLogic</div>
-                        <div className='text-sm mb-4'>Software Private Limited</div>
-
+                    <div className='flex'>
                         <ul className='flex flex-col gap-2 text-sm'>
                             <li className='flex gap-2'><MapPin className='w-4 h-4' />Saptakhel, Lalitpur (Head office)</li>
                             <li className='flex gap-2'><Phone className='w-4 h-4' />+ 977 9851353599</li>
                             <li className='flex gap-2'><Mail className='w-4 h-4' />info@metalogic.com.np</li>
                         </ul>
+                    </div>
+                </div>
+                <div className='hidden md:flex lg:flex-row gap-4 lg:gap-2' >
+                    <span>
+                        <Image src={metalogo} alt="metalogic company logo" className="w-[50px]"></Image>
+                    </span>
+                    <div className='flex flex-col md:flex-row xl:flex-col justify-between xl:justify-normal w-full'>
+                        <div className='flex flex-col'>
+                            <div className="tracking-widest font-exo font-bold text-3xl">MetaLogic</div>
+                            <div className='text-sm mb-4'>Software Private Limited</div>
+                        </div>
+                        <div className='flex'>
+                            <ul className='flex flex-col gap-2 text-sm'>
+                                <li className='flex gap-2'><MapPin className='w-4 h-4' />Saptakhel, Lalitpur (Head office)</li>
+                                <li className='flex gap-2'><Phone className='w-4 h-4' />+ 977 9851353599</li>
+                                <li className='flex gap-2'><Mail className='w-4 h-4' />info@metalogic.com.np</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className='flex flex-col gap-y-8 md:mx-auto md:flex-row md:gap-8 lg:gap-16 xl:mx-0'>

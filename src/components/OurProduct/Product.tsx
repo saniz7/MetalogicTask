@@ -34,8 +34,8 @@ const Product = () => {
                             <button className={`inline-flex items-center justify-center px-3 py-1 text-sm font-medium rounded-3xl ${state ? 'bg-white text-black border border-black' : ''}`} onClick={() => setState(true)}>Banshwali</button>
                             <button className={`inline-flex items-center justify-center px-3 py-1 text-sm font-medium rounded-3xl ${!state ? 'bg-white text-black border border-black' : ''}`} onClick={() => setState(false)}>Digital khata</button>
                         </div>
-                        <div className="rounded-xl border border-border bg-card text-card-foreground shadow-md my-4 grid md:grid-cols-2">
-                            <div className="relative flex items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-green-100 pb-10 lg:rounded-r-none">
+                        <div className="rounded-xl border border-border bg-card text-card-foreground shadow-md my-4 grid grid-cols-1 md:grid-cols-2">
+                            <div className="w-[100%] relative flex items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-green-100 pb-10 lg:rounded-r-none">
                                 <Productswiper image={state ? banashwali : digitalkhata} text={state ? banashwali_text : digitalkhata_text} />
                             </div>
                             <div className="flex h-full flex-col px-4 pt-4">

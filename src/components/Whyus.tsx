@@ -16,7 +16,7 @@ export function Whyus() {
                         <p className="w-[80%]">Innovation is our driving force. We explore the latest tech trends to deliver groundbreaking solutions that keep you ahead.</p>
                     </div>
                     <div className="flex gap-4 pt-4 md:px-[10%] md:pr-[10%]">
-                        <div className=''>
+                        <div className='hidden md:flex'>
                             <svg width="65" height="384" viewBox="0 0 65 384" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path id="dots" d="M30 32L30 292" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-dasharray="" className="dashed_path"></path>
                                 <rect x="29" y="23" width="2" height="70" rx="1" fill="url(#paint0_linear_1_10894)"></rect>
