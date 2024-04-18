@@ -57,7 +57,7 @@ export function Whyus() {
 
     return (
         <div className="text-white py-32 relative" style={{ backgroundImage: `url(${heroImage.src})` }}>
-            <div ref={inViewRef} className={`p-3 container ${state ? 'slide-in- ' : ''}`}>
+            <div ref={inViewRef} className={`p-3 container ${state ? 'slide-in-bottom ' : ''}`}>
                 <div className="rounded-xl border border-translucent_border bg-translucent p-4 text-white backdrop-blur md:p-8 lg:mx-auto lg:w-[80%]">
                     <div>
                         <div className="mb-8 text-2xl font-bold md:text-4xl">
